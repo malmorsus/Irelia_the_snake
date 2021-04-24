@@ -6,10 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     public Rigidbody2D Rigidbody2D;
     public float MoveSpeed;
-    public float Friction;
 
     private Vector2 MoveVelocity;
-
 
     private void Update()
     {
