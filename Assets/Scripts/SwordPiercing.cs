@@ -13,6 +13,7 @@ public class SwordPiercing : MonoBehaviour
     private bool SwordStuck = false;
     private Transform NewParent;
     private SwordMove SwordMove;
+    public bool FirstDealtDamage = true;
 
     private void Start()
     {
@@ -34,7 +35,11 @@ public class SwordPiercing : MonoBehaviour
 
             if (collision.GetComponentInParent<EnemyHealth>())
             {
-                collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                if (FirstDealtDamage)
+                {
+                    FirstDealtDamage = false;
+                    collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                }
             }
         }
    
