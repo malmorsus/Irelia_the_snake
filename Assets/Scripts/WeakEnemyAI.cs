@@ -13,7 +13,7 @@ public class WeakEnemyAI : MonoBehaviour
     public float agroRange;
     public float dashRange;
     public float dashSpeedTowardsPlayer;
-    public float dashTimerCD = 5f;
+    public float dashTimerCD = 1f;
     public Transform player;
     private bool isDashing = false;
 
@@ -22,11 +22,16 @@ public class WeakEnemyAI : MonoBehaviour
     private int randomSpot;
 
     private Vector2 target;
-    private float _timer = 0f;
+    private float _timer = 0.5f;
+    private bool _isDashSTOP = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < moveSpots.Length; i++)
+        {
+            moveSpots[i].parent = null;
+        }
         player = FindObjectOfType<PlayerMove>().transform;
         waitTime = startWaitTimeBtwPatrolling;
         randomSpot = Random.Range(0, moveSpots.Length);
@@ -36,19 +41,24 @@ public class WeakEnemyAI : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-        _timer += Time.deltaTime;
-                   
-        if (distToPlayer < agroRange && distToPlayer > dashRange)
+           
+        if(isDashing)
+        {
+            DashOnPlayer();
+        }
+        else if (distToPlayer < agroRange && distToPlayer > dashRange)
         {
             ChasePlayer();               
         }
         else if (distToPlayer <= dashRange)
         {
+            _timer += Time.deltaTime;
             if (_timer > dashTimerCD)
             {
                 if (!isDashing)
                 {
-                    target = new Vector2(player.position.x, player.position.y);
+                    target = new Vector2(player.position.x, player.position.y) - new Vector2(transform.position.x, transform.position.y);
+                    isDashing = true;
                 }
                 DashOnPlayer();
             }
@@ -71,19 +81,31 @@ public class WeakEnemyAI : MonoBehaviour
 
     void DashOnPlayer()
     {
-        isDashing = true;
         //if (Vector2.Distance(transform.position, target) > 1f)
         //{
-            Debug.Log("DashOnPlayer");
-            transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
+        Debug.Log("DashOnPlayer");
+        //transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
+
+
+        GetComponent<Rigidbody2D>().velocity = target.normalized * dashSpeedTowardsPlayer;
         //}       
         //else 
-        if (Vector2.Distance(transform.position, target) <= 1f)
+        if (_isDashSTOP == false)
+        {
+            Invoke("STOPDash", 1f);
+            _isDashSTOP = true;
+        }
+    }
+
+    void STOPDash()
+    {
+        if (isDashing)
         {
             Debug.Log("STOP_Dash");
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             isDashing = false;
             _timer = 0f;
-
+            _isDashSTOP = false;
         }
     }
 

@@ -29,6 +29,10 @@ public class ShootingEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < moveSpots.Length; i++)
+        {
+            moveSpots[i].parent = null;
+        }
         player = FindObjectOfType<PlayerMove>().transform;
         timeBtwShots = startTimeBtwShots;
         waitTime = startWaitTimeBtwPatrolling;
