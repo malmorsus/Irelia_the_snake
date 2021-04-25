@@ -36,26 +36,25 @@ public class WeakEnemyAI : MonoBehaviour
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (!isDashing)
+        
+            
+        if (distToPlayer < agroRange && distToPlayer > dashRange)
         {
-            if (distToPlayer < agroRange && distToPlayer > dashRange)
-            {
-                ChasePlayer();
-            }
-            else if (distToPlayer <= dashRange)
-            {
-                DashOnPlayer();
-            }
-            else
-            {
-                Patroll();
-            }
+            ChasePlayer();               
         }
-
-        
-
-
-        
+        else if (distToPlayer <= dashRange)
+        {
+            if (!isDashing)
+            {
+                target = new Vector2(player.position.x, player.position.y);
+            }
+            DashOnPlayer();
+        }
+        else
+        {
+            Patroll();
+        }
+             
     }
 
     void ChasePlayer()
@@ -69,9 +68,12 @@ public class WeakEnemyAI : MonoBehaviour
     void DashOnPlayer()
     {
         isDashing = true;
-        target = new Vector2(player.position.x, player.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
-        if (Vector2.Distance(transform.position, target) < 0.2f)
+        Debug.Log("Target locked");
+        if (Vector2.Distance(transform.position, target) > 0f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
+        }       
+        else if (Vector2.Distance(transform.position, target) == 0f)
         {
             isDashing = false;
         }
@@ -99,6 +101,7 @@ public class WeakEnemyAI : MonoBehaviour
     {
         Handles.color = Color.grey;
         Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, dashRange);
     }
 
 }
