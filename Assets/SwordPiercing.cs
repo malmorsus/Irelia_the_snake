@@ -14,11 +14,15 @@ public class SwordPiercing : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (SwordStuck == false)
+        if (collision.GetComponentInParent<PlayerHealth>() == false && collision.GetComponentInParent<SwordPiercing>() == false)
         {
-            NewParent = collision.transform;
-            Invoke("Piercing", 0.05f);
-        }    
+            if (SwordStuck == false)
+            {
+                NewParent = collision.transform;
+                Invoke("Piercing", 0.05f);
+            }
+        }
+   
     }
 
     public void Piercing()

@@ -12,7 +12,7 @@ public class SpawnSword : MonoBehaviour
     {
         if (WithSword == false)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 WithSword = true;
                 Throw();
