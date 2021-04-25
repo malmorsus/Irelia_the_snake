@@ -270,7 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody2D: {fileID: 2345491039426865603}
-  Speed: 8
+  SpeedChase: 7
+  SpeedFree: 13
   Camera: {fileID: 0}
   StopDistance: 2
 --- !u!114 &4421755591110579773

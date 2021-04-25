@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Transform player;
     Transform sword;
 
+    public bool _isFollowPlayer = true;
 
     void Start()
     {
@@ -16,16 +17,32 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && FindObjectOfType<SpawnSword>().WithSword == true && FindObjectOfType<SwordMove>()._isChase == true)
         {
-            sword = FindObjectOfType<SwordMove>().transform;
-            cameraFollow.SetGetCameraFollowPositionFunc(() => sword.position);
+            FollowSword();
+            _isFollowPlayer = false;
         }
-        else
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            cameraFollow.SetGetCameraFollowPositionFunc(() => player.position);
+            Invoke("FollowPlayer", 0.5f);
+        }
+
+        if (_isFollowPlayer)
+        {
+            FollowPlayer();
         }
     }
 
+    public void FollowSword()
+    {
+        sword = FindObjectOfType<SwordMove>().transform;
+        cameraFollow.SetGetCameraFollowPositionFunc(() => sword.position);
+    }
+
+    public void FollowPlayer()
+    {
+        cameraFollow.SetGetCameraFollowPositionFunc(() => player.position);
+        _isFollowPlayer = true;
+    }
 
 }

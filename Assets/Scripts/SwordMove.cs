@@ -5,11 +5,12 @@ using UnityEngine;
 public class SwordMove : MonoBehaviour
 {
     public Rigidbody2D Rigidbody2D;
-    public float Speed;
+    public float SpeedChase;
+    public float SpeedFree;
     public Camera Camera;
     public float StopDistance;
+    public bool _isChase = true;
 
-    private bool _isChase = true;
     private Vector2 moveTo;
     private Vector2 MoveVelocity;
     private Vector3 mousPosition;
@@ -29,10 +30,13 @@ public class SwordMove : MonoBehaviour
             transform.up = direction;
             moveTo = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;           
         }
-
-        MoveVelocity = moveTo.normalized * Speed; 
         
         if (Mathf.Abs(moveTo.x) <= StopDistance && Mathf.Abs(moveTo.y) <= StopDistance)
+        {
+            _isChase = false;
+        }
+
+        if (Input.GetMouseButtonUp(0))
         {
             _isChase = false;
         }
@@ -41,7 +45,16 @@ public class SwordMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = MoveVelocity * Speed;
+        if (_isChase)
+        {
+            MoveVelocity = moveTo.normalized * SpeedChase;
+            Rigidbody2D.velocity = MoveVelocity * SpeedChase;
+        }
+        else
+        {
+            MoveVelocity = moveTo.normalized * SpeedFree;
+            Rigidbody2D.velocity = MoveVelocity * SpeedFree;
+        }
     }
 
 }
