@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
             Invoke("FollowPlayer", 0.5f);
         }
 
-        if (_isFollowPlayer)
+        if (_isFollowPlayer || FindObjectOfType<SpawnSword>().WithSword == false)
         {
             FollowPlayer();
         }
@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour
 
     public void FollowSword()
     {
-        sword = FindObjectOfType<SwordMove>().transform;
-        cameraFollow.SetGetCameraFollowPositionFunc(() => sword.position);
+        if (FindObjectOfType<SwordMove>())
+        {
+            sword = FindObjectOfType<SwordMove>().transform;
+            cameraFollow.SetGetCameraFollowPositionFunc(() => sword.position);
+        }
     }
 
     public void FollowPlayer()

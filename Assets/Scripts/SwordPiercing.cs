@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwordPiercing : MonoBehaviour
 {
+    public int SwordDamage = 1;
     public TrailRenderer TrailR;
     public Collider2D SwordCollider;
     private bool SwordStuck = false;
@@ -23,6 +24,11 @@ public class SwordPiercing : MonoBehaviour
                 NewParent = collision.transform;
                 Invoke("Piercing", 0.05f);
             }
+        }
+
+        if (collision.GetComponentInParent<EnemyHealth>())
+        {
+            collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
         }
    
     }

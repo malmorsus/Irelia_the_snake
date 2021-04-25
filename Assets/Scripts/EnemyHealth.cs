@@ -12,7 +12,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Invoke("DestroyEnemy", 0.1f);
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
