@@ -11,13 +11,16 @@ public class WeakEnemyAI : MonoBehaviour
     public float startWaitTimeBtwPatrolling;
     public float moveSpeedTowardsPlayer;
     public float agroRange;
+    public float dashRange;
+    public float dashSpeedTowardsPlayer;
     public Transform player;
+    private bool isDashing = false;
 
     [Header("Move Spots")]
     public Transform[] moveSpots;
     private int randomSpot;
 
-   
+    private Vector2 target;
 
 
     // Start is called before the first frame update
@@ -33,14 +36,23 @@ public class WeakEnemyAI : MonoBehaviour
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distToPlayer < agroRange)
+        if (!isDashing)
         {
-            ChasePlayer();
+            if (distToPlayer < agroRange && distToPlayer > dashRange)
+            {
+                ChasePlayer();
+            }
+            else if (distToPlayer <= dashRange)
+            {
+                DashOnPlayer();
+            }
+            else
+            {
+                Patroll();
+            }
         }
-        else
-        {
-            Patroll();
-        }
+
+        
 
 
         
@@ -54,6 +66,16 @@ public class WeakEnemyAI : MonoBehaviour
         }
     }
 
+    void DashOnPlayer()
+    {
+        isDashing = true;
+        target = new Vector2(player.position.x, player.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
+        if (Vector2.Distance(transform.position, target) < 0.2f)
+        {
+            isDashing = false;
+        }
+    }
 
     void Patroll()
     {
