@@ -13,6 +13,10 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             Invoke("DestroyEnemy", 0.1f);
+            for (int i = 0; i < GetComponentsInChildren<SwordPiercing>().Length; i++)
+            {
+                GetComponentsInChildren<SwordPiercing>()[i].SpuwnNewSword();
+            }
         }
     }
 

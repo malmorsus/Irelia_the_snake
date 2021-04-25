@@ -15,6 +15,8 @@ public class SwordPiercing : MonoBehaviour
     private SwordMove SwordMove;
     public bool FirstDealtDamage = true;
 
+    public GameObject Sword;
+
     private void Start()
     {
         SwordMove = FindObjectOfType<SwordMove>();
@@ -56,5 +58,14 @@ public class SwordPiercing : MonoBehaviour
         SwordMove.gameObject.transform.SetParent(NewParent, true);
         //SwordMove.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         SwordStuck = true;
+        Invoke("SpuwnNewSword", 2f);
+    }
+
+    public void SpuwnNewSword()
+    {
+        GameObject newSword =  Instantiate(Sword);
+        newSword.transform.position = gameObject.transform.position;
+        newSword.transform.parent = null;
+        Destroy(gameObject);
     }
 }

@@ -293,6 +293,7 @@ MonoBehaviour:
   SwordCollider: {fileID: 4944490869671366746}
   SwordStartWait: 1
   FirstDealtDamage: 1
+  Sword: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
 --- !u!114 &7912756089993727917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0095a1bbe94d74c8f108201e3c2572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
 --- !u!50 &2345491039426865603
 Rigidbody2D:
   serializedVersion: 4
