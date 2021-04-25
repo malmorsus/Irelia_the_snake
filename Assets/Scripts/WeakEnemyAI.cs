@@ -88,7 +88,6 @@ public class WeakEnemyAI : MonoBehaviour
         Debug.Log("DashOnPlayer");
         //transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
 
-
         GetComponent<Rigidbody2D>().velocity = target.normalized * dashSpeedTowardsPlayer;
         //}       
         //else 
@@ -128,6 +127,26 @@ public class WeakEnemyAI : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isDashing)
+        {
+            if (other.GetComponentInParent<Rigidbody2D>())
+            {
+                if (other.GetComponentInParent<PlayerHealth>())
+                {
+                    if (other.GetComponentInParent<PlayerHealth>().isInvincible == false)
+                    {
+                        other.GetComponentInParent<PlayerHealth>().TakeDamage();
+                    }
+
+                }
+            }
+        }
+
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
