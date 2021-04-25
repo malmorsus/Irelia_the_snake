@@ -69,10 +69,8 @@ public class ShootingEnemyAI : MonoBehaviour
             if (timeBtwShots <= 0)
             {
                 Invoke("Shoot", 0.1f);
-                Invoke("Shoot", 0.1f);
-                Invoke("Shoot", 0.1f);
-                Invoke("Shoot", 0.1f);
-                Invoke("Shoot", 0.1f);
+                Invoke("Shoot", 0.2f);
+                Invoke("Shoot", 0.3f);
                 timeBtwShots = startTimeBtwShots;
             }
             else

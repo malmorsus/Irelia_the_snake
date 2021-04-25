@@ -253,7 +253,7 @@ MonoBehaviour:
   startWaitTimeBtwPatrolling: 2
   moveSpeedTowardsPlayer: 15
   agroRange: 75
-  retreatDistance: 15
+  retreatDistance: 20
   player: {fileID: 0}
   moveSpots:
   - {fileID: 550122926}
@@ -261,7 +261,7 @@ MonoBehaviour:
   - {fileID: 1042639382}
   - {fileID: 1184511234}
   projectile: {fileID: 476423473491504190, guid: ae31559267294aa44b5919a96c331e61, type: 3}
-  startTimeBtwShots: 1
+  startTimeBtwShots: 1.5
 --- !u!114 &4121674701409271186
 MonoBehaviour:
   m_ObjectHideFlags: 0
