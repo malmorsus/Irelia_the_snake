@@ -13,6 +13,7 @@ public class WeakEnemyAI : MonoBehaviour
     public float agroRange;
     public float dashRange;
     public float dashSpeedTowardsPlayer;
+    public float dashTimerCD = 5f;
     public Transform player;
     private bool isDashing = false;
 
@@ -21,7 +22,7 @@ public class WeakEnemyAI : MonoBehaviour
     private int randomSpot;
 
     private Vector2 target;
-
+    private float _timer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,20 +36,22 @@ public class WeakEnemyAI : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        
-            
+        _timer += Time.deltaTime;
+                   
         if (distToPlayer < agroRange && distToPlayer > dashRange)
         {
             ChasePlayer();               
         }
         else if (distToPlayer <= dashRange)
         {
-            if (!isDashing)
+            if (_timer > dashTimerCD)
             {
-                target = new Vector2(player.position.x, player.position.y);
+                if (!isDashing)
+                {
+                    target = new Vector2(player.position.x, player.position.y);
+                }
+                DashOnPlayer();
             }
-            DashOnPlayer();
         }
         else
         {
@@ -59,28 +62,34 @@ public class WeakEnemyAI : MonoBehaviour
 
     void ChasePlayer()
     {
-        if (Vector2.Distance(transform.position, player.position) > 0.2f)
-        {
+        //if (Vector2.Distance(transform.position, player.position) > (dashRange - 4f))
+        //{
+            Debug.Log("ChasePlayer");
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeedTowardsPlayer * Time.deltaTime);
-        }
+        //}
     }
 
     void DashOnPlayer()
     {
         isDashing = true;
-        Debug.Log("Target locked");
-        if (Vector2.Distance(transform.position, target) > 0f)
-        {
+        //if (Vector2.Distance(transform.position, target) > 1f)
+        //{
+            Debug.Log("DashOnPlayer");
             transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
-        }       
-        else if (Vector2.Distance(transform.position, target) == 0f)
+        //}       
+        //else 
+        if (Vector2.Distance(transform.position, target) <= 1f)
         {
+            Debug.Log("STOP_Dash");
             isDashing = false;
+            _timer = 0f;
+
         }
     }
 
     void Patroll()
     {
+        Debug.Log("Patroll");
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, patrollingMoveSpeed * Time.deltaTime);
         if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
         {
