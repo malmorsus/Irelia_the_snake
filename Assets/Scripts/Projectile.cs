@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     //Projectile NEEDS collider2D set to trigger
 
     public float speed;
+    public float minOffsetRange;
+    public float maxOffsetRange;
 
     private Transform player;
     private Vector2 target;
@@ -19,7 +21,7 @@ public class Projectile : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMove>().transform;
         rb2d = GetComponent<Rigidbody2D>();
-        target = new Vector2(player.position.x - transform.position.x, player.position.y- transform.position.y);
+        target = new Vector2(player.position.x - transform.position.x + Random.Range(minOffsetRange, maxOffsetRange), player.position.y- transform.position.y + Random.Range(minOffsetRange, maxOffsetRange));
     }
 
     

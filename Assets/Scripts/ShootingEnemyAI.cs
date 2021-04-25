@@ -22,6 +22,7 @@ public class ShootingEnemyAI : MonoBehaviour
     public GameObject projectile;
     private float timeBtwShots;
     public float startTimeBtwShots;
+    private Vector2 randomVector;
 
 
 
@@ -67,7 +68,11 @@ public class ShootingEnemyAI : MonoBehaviour
         {
             if (timeBtwShots <= 0)
             {
-                Instantiate(projectile, transform.position, Quaternion.identity);
+                Invoke("Shoot", 0.1f);
+                Invoke("Shoot", 0.1f);
+                Invoke("Shoot", 0.1f);
+                Invoke("Shoot", 0.1f);
+                Invoke("Shoot", 0.1f);
                 timeBtwShots = startTimeBtwShots;
             }
             else
@@ -100,6 +105,13 @@ public class ShootingEnemyAI : MonoBehaviour
         Handles.color = Color.grey;
         Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
         Handles.DrawWireDisc(transform.position, Vector3.forward, retreatDistance);
+    }
+
+    void Shoot()
+    {
+        randomVector = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        var shotPoint = new Vector2(transform.position.x + randomVector.x, transform.position.y + randomVector.y);
+        Instantiate(projectile, shotPoint, Quaternion.identity);
     }
 
 }
