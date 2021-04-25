@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 331860461}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 437380457}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 443844721}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 773473214}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 1267024058}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -952,37 +952,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1638919786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1268416037341329170, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-  m_PrefabInstance: {fileID: 1796442278}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1638919788
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638919786}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!4 &1638919789 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1268416037341329175, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-  m_PrefabInstance: {fileID: 1796442278}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1693793404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1085,7 +1054,7 @@ GameObject:
   - component: {fileID: 1751967315}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,21 +1157,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1268416037341329169, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-      propertyPath: agroRange
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268416037341329169, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-      propertyPath: retreatDistance
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268416037341329169, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-      propertyPath: patrollingMoveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268416037341329169, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
-      propertyPath: moveSpeedTowardsPlayer
-      value: 15
+    - target: {fileID: 1638919788, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1268416037341329169, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
       propertyPath: moveSpots.Array.data[0]
@@ -1223,6 +1180,10 @@ PrefabInstance:
     - target: {fileID: 1268416037341329170, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
       propertyPath: m_Name
       value: ShootingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268416037341329170, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1268416037341329175, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
       propertyPath: m_RootOrder
@@ -1270,53 +1231,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c44411e8f55bc408c4f9ed56cb2a14, type: 3}
---- !u!1 &1845516292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1845516293}
-  - component: {fileID: 1845516294}
-  m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1845516293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845516292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.25, z: 0}
-  m_LocalScale: {x: 8.0122, y: 8.0122, z: 8.0122}
-  m_Children: []
-  m_Father: {fileID: 1638919789}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1845516294
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845516292}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000047683716, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1001 &2345491038342553256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1403,7 +1317,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &3892906759579827311 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3892906761124691987, guid: e7a80d23e6c62d54da89c74ad5c57d7e, type: 3}
@@ -1419,6 +1333,10 @@ PrefabInstance:
     - target: {fileID: 7409678625267693292, guid: fe3f9cb44a0a12a409e8724f91d7463a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409678625267693294, guid: fe3f9cb44a0a12a409e8724f91d7463a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7409678625267693295, guid: fe3f9cb44a0a12a409e8724f91d7463a, type: 3}
       propertyPath: m_RootOrder

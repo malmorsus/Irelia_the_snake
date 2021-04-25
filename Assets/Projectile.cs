@@ -10,25 +10,29 @@ public class Projectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+    private Rigidbody2D rb2d;
 
+
+    private Vector2 moveBullet;
    
     void Start()
     {
         player = FindObjectOfType<PlayerMove>().transform;
-
-        target = new Vector2(player.position.x, player.position.y);
+        rb2d = GetComponent<Rigidbody2D>();
+        target = new Vector2(player.position.x - transform.position.x, player.position.y- transform.position.y);
     }
 
     
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+         moveBullet = target.normalized * speed;
 
-        /*if (transform.position.x == target.x && transform.position.y == target.y)
-        {
-            DestroyProjectile();
-        }
-        */
+        //rb2d.AddForce(transform.position * target); Это можно использовать для босса
+    }
+
+    private void FixedUpdate()
+    {
+        rb2d.MovePosition(rb2d.position + moveBullet * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +44,12 @@ public class Projectile : MonoBehaviour
                 other.GetComponentInParent<PlayerHealth>().health--;
                 DestroyProjectile();
             }
+
+            
+        }
+        if (other.CompareTag("Walls"))
+        {
+            DestroyProjectile();
         }
     }
 
