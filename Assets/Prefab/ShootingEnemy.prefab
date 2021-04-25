@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268416037341329175}
   - component: {fileID: 1268416037341329169}
+  - component: {fileID: 4121674701409271186}
   - component: {fileID: 1638919788}
   m_Layer: 0
   m_Name: ShootingEnemy
@@ -107,6 +108,19 @@ MonoBehaviour:
   - {fileID: 0}
   projectile: {fileID: 476423473491504190, guid: ae31559267294aa44b5919a96c331e61, type: 3}
   startTimeBtwShots: 2
+--- !u!114 &4121674701409271186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268416037341329170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea25d61937d73c458bf1b65198e83ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!50 &1638919788
 Rigidbody2D:
   serializedVersion: 4
