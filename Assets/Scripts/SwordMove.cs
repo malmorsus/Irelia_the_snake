@@ -53,7 +53,7 @@ public class SwordMove : MonoBehaviour
                 _isFliesBack = true;
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 _isChase = false;
                 FindObjectOfType<SwordPiercing>().SwordStartWait = false;

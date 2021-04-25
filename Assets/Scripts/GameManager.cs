@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && FindObjectOfType<SpawnSword>().WithSword == true && FindObjectOfType<SwordMove>()._isChase == true)
+        if (FindObjectOfType<SpawnSword>().WithSword == true && FindObjectOfType<SwordMove>()._isChase == true)
         {
             FollowSword();
             _isFollowPlayer = false;

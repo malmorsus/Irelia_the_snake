@@ -8,18 +8,27 @@ public class SpawnSword : MonoBehaviour
     public Transform Spawn;
     public bool WithSword = false;
     private float SwordStartWaitTime = 0.5f;
-
-
+    public float SpawnCD = 0.5f;
+    private float waitTime = 0f;
+     
     void Update()
     {
-        if (WithSword == false)
+        if (waitTime <= 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (WithSword == false)
             {
-                WithSword = true;
-                Invoke("StartWait", SwordStartWaitTime);
-                Throw();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    WithSword = true;
+                    Invoke("StartWait", SwordStartWaitTime);
+                    Throw();
+                    waitTime = SpawnCD;
+                }
             }
+        }
+        else
+        {
+            waitTime -= Time.deltaTime;
         }
     }
   
