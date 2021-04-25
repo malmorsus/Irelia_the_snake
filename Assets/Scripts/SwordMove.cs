@@ -65,12 +65,12 @@ public class SwordMove : MonoBehaviour
     {
         if (_isChase)
         {
-            MoveVelocity = moveTo.normalized * SpeedChase;
+            MoveVelocity = moveTo.normalized;
             Rigidbody2D.velocity = MoveVelocity * SpeedChase;
         }
         else
         {
-            MoveVelocity = moveTo.normalized * SpeedFree;
+            MoveVelocity = moveTo.normalized;
             Rigidbody2D.velocity = MoveVelocity * SpeedFree;
         }
     }
