@@ -274,6 +274,8 @@ MonoBehaviour:
   SpeedFree: 13
   Camera: {fileID: 0}
   StopDistance: 2
+  _isChase: 1
+  _isFliesBack: 0
 --- !u!114 &4421755591110579773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,8 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008c8335502317d44b94a9ad627f5286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SwordDamage: 1
   TrailR: {fileID: 2345491037746973125}
   SwordCollider: {fileID: 4944490869671366746}
+  SwordStartWait: 1
 --- !u!114 &7912756089993727917
 MonoBehaviour:
   m_ObjectHideFlags: 0

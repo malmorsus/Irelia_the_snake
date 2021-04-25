@@ -7,6 +7,9 @@ public class SwordPiercing : MonoBehaviour
     public int SwordDamage = 1;
     public TrailRenderer TrailR;
     public Collider2D SwordCollider;
+
+    public bool SwordStartWait = true;
+
     private bool SwordStuck = false;
     private Transform NewParent;
     private SwordMove SwordMove;
@@ -15,20 +18,24 @@ public class SwordPiercing : MonoBehaviour
     {
         SwordMove = FindObjectOfType<SwordMove>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponentInParent<PlayerHealth>() == false && collision.GetComponentInParent<SwordPiercing>() == false)
+        if (SwordStartWait == false)
         {
-            if (SwordStuck == false)
+            if (collision.GetComponentInParent<PlayerHealth>() == false && collision.GetComponentInParent<SwordPiercing>() == false)
             {
-                NewParent = collision.transform;
-                Invoke("Piercing", 0.05f);
+                if (SwordStuck == false)
+                {
+                    NewParent = collision.transform;
+                    Invoke("Piercing", 0.05f);
+                }
             }
-        }
 
-        if (collision.GetComponentInParent<EnemyHealth>())
-        {
-            collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+            if (collision.GetComponentInParent<EnemyHealth>())
+            {
+                collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+            }
         }
    
     }

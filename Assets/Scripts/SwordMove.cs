@@ -10,14 +10,17 @@ public class SwordMove : MonoBehaviour
     public Camera Camera;
     public float StopDistance;
     public bool _isChase = true;
+    public bool _isFliesBack = false;
 
     private Vector2 moveTo;
     private Vector2 MoveVelocity;
     private Vector3 mousPosition;
+    private Vector3 PlayerPosition;
 
     private void Start()
     {
         Camera = FindObjectOfType<Camera>();
+        PlayerPosition = FindObjectOfType<PlayerMove>().transform.position;
     }
 
     void Update()
@@ -25,22 +28,36 @@ public class SwordMove : MonoBehaviour
         mousPosition = Camera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = new Vector2(mousPosition.x - transform.position.x, mousPosition.y - transform.position.y);
 
-        if (_isChase)
+        if (_isFliesBack)
         {
-            transform.up = direction;
-            moveTo = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;           
+            PlayerPosition = FindObjectOfType<PlayerMove>().transform.position;
+            moveTo = PlayerPosition - transform.position;
+            transform.up = moveTo;
+            if (Mathf.Abs(moveTo.x) <= StopDistance && Mathf.Abs(moveTo.y) <= StopDistance)
+            {
+                FindObjectOfType<SpawnSword>().WithSword = false;
+                Destroy(gameObject);
+            }
         }
-        
-        if (Mathf.Abs(moveTo.x) <= StopDistance && Mathf.Abs(moveTo.y) <= StopDistance)
+        else
         {
-            _isChase = false;
-        }
+            if (_isChase)
+            {
+                transform.up = direction;
+                moveTo = Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            _isChase = false;
-        }
+            if (Mathf.Abs(moveTo.x) <= StopDistance && Mathf.Abs(moveTo.y) <= StopDistance)
+            {
+                _isChase = false;
+                _isFliesBack = true;
+            }
 
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isChase = false;
+            }
+        }
     }
 
     private void FixedUpdate()
