@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ShootingEnemyAI : MonoBehaviour
@@ -28,6 +29,7 @@ public class ShootingEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerMove>().transform;
         timeBtwShots = startTimeBtwShots;
         waitTime = startWaitTimeBtwPatrolling;
         randomSpot = Random.Range(0, moveSpots.Length);
@@ -88,4 +90,12 @@ public class ShootingEnemyAI : MonoBehaviour
             }
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.grey;
+        Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
+        Handles.DrawWireDisc(transform.position, Vector3.forward, retreatDistance);
+    }
+
 }

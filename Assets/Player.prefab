@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7409678625267693295}
   - component: {fileID: 7409678625267693281}
   - component: {fileID: 6825670091666226411}
+  - component: {fileID: 8139543024511311174}
   - component: {fileID: 7409678625267693294}
   m_Layer: 0
   m_Name: Player
@@ -152,6 +153,19 @@ MonoBehaviour:
   SwordPrefab: {fileID: 2345491039426865600, guid: ff9a70ce2b6ac5c4aadad675f8b550d4, type: 3}
   Spawn: {fileID: 1421549970921464303}
   WithSword: 0
+--- !u!114 &8139543024511311174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409678625267693292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c005ea5f2b8ae4583197f29aaed616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!50 &7409678625267693294
 Rigidbody2D:
   serializedVersion: 4

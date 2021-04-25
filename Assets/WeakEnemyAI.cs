@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WeakEnemyAI : MonoBehaviour
@@ -22,7 +23,7 @@ public class WeakEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerMove>().transform;
         waitTime = startWaitTimeBtwPatrolling;
         randomSpot = Random.Range(0, moveSpots.Length);
     }
@@ -71,5 +72,11 @@ public class WeakEnemyAI : MonoBehaviour
         }
     }
 
+
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.grey;
+        Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
+    }
 
 }
