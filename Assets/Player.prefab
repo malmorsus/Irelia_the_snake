@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4474065086611045846}
   - component: {fileID: 6051460055369735896}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421549970921464303}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spuwn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6825670091666226411}
   - component: {fileID: 8139543024511311174}
   - component: {fileID: 7409678625267693294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &7409678626891480887
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7409678626891480886}
   - component: {fileID: 7409678626891480265}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 7d0e28ac72039e5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

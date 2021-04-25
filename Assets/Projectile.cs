@@ -44,8 +44,12 @@ public class Projectile : MonoBehaviour
                 other.GetComponentInParent<PlayerHealth>().health--;
                 DestroyProjectile();
             }
+            if (other.GetComponentInParent<SwordBroke>())
+            {
+                other.GetComponentInParent<SwordBroke>().BrokeSword();
+                DestroyProjectile();
+            }
 
-            
         }
         if (other.CompareTag("Walls"))
         {

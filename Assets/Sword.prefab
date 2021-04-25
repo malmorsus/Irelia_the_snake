@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2345491037746973124}
   - component: {fileID: 2345491037746973125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2345491038291101184}
   - component: {fileID: 2345491038291101185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 29b6620326ac426
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,8 +231,9 @@ GameObject:
   - component: {fileID: 2345491039426865601}
   - component: {fileID: 2345491039426865602}
   - component: {fileID: 4421755591110579773}
+  - component: {fileID: 7912756089993727917}
   - component: {fileID: 2345491039426865603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,6 +286,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrailR: {fileID: 2345491037746973125}
+  SwordCollider: {fileID: 4944490869671366746}
+--- !u!114 &7912756089993727917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345491039426865600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0095a1bbe94d74c8f108201e3c2572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2345491039426865603
 Rigidbody2D:
   serializedVersion: 4
@@ -316,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4679888775255665675}
   - component: {fileID: 4944490869671366746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 6120482524135736392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1225, y: 0.61, z: 0}
-  m_LocalScale: {x: 1.9179542, y: 5.58252, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2345491039426865601}
   m_RootOrder: 2
@@ -350,6 +364,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000009536743, y: 0}
-  m_Size: {x: 0.99999994, y: 2.0000002}
+  m_Offset: {x: 0.024433136, y: 0.13438559}
+  m_Size: {x: 1.6841469, y: 10.869472}
   m_Direction: 0
