@@ -10,7 +10,13 @@ public class SpawnSword : MonoBehaviour
     private float SwordStartWaitTime = 0.5f;
     public float SpawnCD = 0.5f;
     private float waitTime = 0f;
-     
+    private SwordsTail SwordsTail;
+
+    private void Start()
+    {
+        SwordsTail = FindObjectOfType<SwordsTail>();
+    }
+    
     void Update()
     {
         if (waitTime <= 0)
@@ -35,6 +41,7 @@ public class SpawnSword : MonoBehaviour
     public void Throw()
     {
         GameObject newSword = Instantiate(SwordPrefab, Spawn.position, Spawn.rotation);
+        SwordsTail.CanIThrowSword();
     }
 
     public void StartWait()
