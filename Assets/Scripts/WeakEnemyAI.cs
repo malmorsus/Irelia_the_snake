@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class WeakEnemyAI : MonoBehaviour
@@ -127,12 +129,12 @@ public class WeakEnemyAI : MonoBehaviour
         }
     }
 
-
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.grey;
         Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
         Handles.DrawWireDisc(transform.position, Vector3.forward, dashRange);
     }
-
+#endif
 }

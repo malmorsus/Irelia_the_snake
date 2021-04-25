@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ShootingEnemyAI : MonoBehaviour
@@ -24,8 +26,8 @@ public class ShootingEnemyAI : MonoBehaviour
     public float startTimeBtwShots;
     private Vector2 randomVector;
 
-
-
+    public float agroTimeCD = 1.5f;
+    private float _timer = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +46,17 @@ public class ShootingEnemyAI : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distToPlayer < agroRange)
+        _timer += Time.deltaTime;
+        if (_timer > agroTimeCD)
         {
-            AttackPlayer();
+            if (distToPlayer < agroRange)
+            {
+                AttackPlayer();
+            }
+            else
+            {
+                Patroll();
+            }
         }
         else
         {
@@ -72,6 +81,8 @@ public class ShootingEnemyAI : MonoBehaviour
                 Invoke("Shoot", 0.2f);
                 Invoke("Shoot", 0.3f);
                 timeBtwShots = startTimeBtwShots;
+                _timer = 0f;
+                randomSpot = Random.Range(0, moveSpots.Length);
             }
             else
             {
@@ -97,17 +108,17 @@ public class ShootingEnemyAI : MonoBehaviour
             }
         }
     }
-
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.grey;
         Handles.DrawWireDisc(transform.position, Vector3.forward, agroRange);
         Handles.DrawWireDisc(transform.position, Vector3.forward, retreatDistance);
     }
-
+#endif
     void Shoot()
     {
-        randomVector = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        randomVector = new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(-1.5f, 1.5f));
         var shotPoint = new Vector2(transform.position.x + randomVector.x, transform.position.y + randomVector.y);
         Instantiate(projectile, shotPoint, Quaternion.identity);
     }
