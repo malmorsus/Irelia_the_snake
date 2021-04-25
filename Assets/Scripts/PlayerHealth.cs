@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     
     private void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        rend = GetComponentInChildren<SpriteRenderer>();
         c = rend.color;
     }
 
@@ -34,18 +34,21 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        health--;
         isInvincible = true;
+        Debug.Log("Im invincible");
+        health--;
     }
 
     IEnumerator GetIFrames()
     {
-        c.a = 0.1f;
+        c.a = 0.5f;
         rend.color = c;
         yield return new WaitForSeconds(2f);
         c.a = 1f;
         rend.color = c;
-        isInvincible = false;
         yield return null;
+        isInvincible = false;
+        Debug.Log("Im frail");
+        
     }
 }
