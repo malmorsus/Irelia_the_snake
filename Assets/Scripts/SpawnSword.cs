@@ -39,7 +39,8 @@ public class SpawnSword : MonoBehaviour
 
     public void StartWait()
     {
-        FindObjectOfType<SwordPiercing>().SwordStartWait = false;
+        if(FindObjectOfType<SwordPiercing>())
+            FindObjectOfType<SwordPiercing>().SwordStartWait = false;
         //FindObjectOfType<SwordPiercing>().SwordCollider.enabled = true;
     }
 }
