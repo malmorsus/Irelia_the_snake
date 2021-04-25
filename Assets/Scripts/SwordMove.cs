@@ -56,6 +56,7 @@ public class SwordMove : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 _isChase = false;
+                FindObjectOfType<SwordPiercing>().SwordStartWait = false;
             }
         }
     }
