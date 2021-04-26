@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 3892906761124691997}
   - component: {fileID: 6636254280830777747}
   - component: {fileID: 3892906759579827298}
+  - component: {fileID: 2269064948240009848}
   m_Layer: 7
   m_Name: WeakEnemy
   m_TagString: Untagged
@@ -266,6 +267,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &2269064948240009848
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892906761124691996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74d09ebaf3342d44192fca6cce722a62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3940454880373486712
 GameObject:
   m_ObjectHideFlags: 0

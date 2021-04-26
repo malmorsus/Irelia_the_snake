@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 8347660690524828016}
   - component: {fileID: 5470282927624568686}
   - component: {fileID: 7409678625267693294}
+  - component: {fileID: 6250551014407769003}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c005ea5f2b8ae4583197f29aaed616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 4
   isInvincible: 0
   EventOnTakeDamage:
     m_PersistentCalls:
@@ -302,6 +303,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  numOfHearts: 4
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 8171083347515670989, guid: f8d39a428e860e7458bdafaf46c44ff4, type: 3}
+  emptyHeart: {fileID: -6065782268145678679, guid: f8d39a428e860e7458bdafaf46c44ff4, type: 3}
 --- !u!114 &8347660690524828016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +367,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &6250551014407769003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409678625267693292}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98b6597c0582e844b90f51edcb2a9c75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8026504999587792549
 GameObject:
   m_ObjectHideFlags: 0
