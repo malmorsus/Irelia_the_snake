@@ -30,6 +30,7 @@ public class SwordPiercing : MonoBehaviour
             SwordMove.enabled = false;
             FindObjectOfType<SpawnSword>().WithSword = false;
             Invoke("SpuwnNewSword", 0f);
+            FindObjectOfType<AudioManager>().Play("Shield");
             return;
         }
 
@@ -42,6 +43,7 @@ public class SwordPiercing : MonoBehaviour
                 {
                     NewParent = collision.transform;
                     Invoke("Piercing", 0.05f);
+                    
                 }
             }
 
@@ -51,6 +53,7 @@ public class SwordPiercing : MonoBehaviour
                 {
                     FirstDealtDamage = false;
                     collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                    FindObjectOfType<AudioManager>().Play("Attack");
                     return;
                 }
             }

@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isInvincible = true;
             health--;
+            FindObjectOfType<AudioManager>().Play("Damage");
             if (health <= 0)
             {
                 Destroy(gameObject);

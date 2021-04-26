@@ -44,9 +44,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: EnemyDash
+  - name: Damage
     clip: {fileID: 8300000, guid: 65d5cae8246036a4487ac80aaa50cad6, type: 3}
     volume: 1
     pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shield
+    clip: {fileID: 8300000, guid: 979527b69cb69d846948d5f3e564dd8f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: 2d892ae64a6034d41be81be3a2fcced4, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
