@@ -9,9 +9,12 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     private int currentHealth;
     public Blood Blood;
+    private Activator _activator;
 
     private void Start()
     {
+        _activator = FindObjectOfType<Activator>();
+        _activator.AliveEnemys.Add(this);
         currentHealth = health;
     }
 
@@ -35,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        _activator.AliveEnemys.Remove(this);
         Destroy(gameObject);
     }
 }
