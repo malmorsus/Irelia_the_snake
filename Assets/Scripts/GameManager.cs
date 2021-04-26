@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,9 +12,16 @@ public class GameManager : MonoBehaviour
 
     public bool _isFollowPlayer = true;
 
+    public GameObject textUI;
+    
+    public bool gameEnded = false;
+
+    private int scene;
+
     void Start()
     {
         cameraFollow.Setup(() => player.position);
+        scene = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
@@ -31,7 +40,27 @@ public class GameManager : MonoBehaviour
         {
             FollowPlayer();
         }
+
+        if (FindObjectOfType<PlayerHealth>().health <= 0)
+        {
+            textUI.SetActive(true);
+            gameEnded = true;
+        }
+        else
+        {
+            textUI.SetActive(false);
+            gameEnded = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && gameEnded)
+        {
+            
+            Debug.Log("RESTARTED");
+            SceneManager.LoadScene(scene);
+        }
     }
+
+
 
     public void FollowSword()
     {
@@ -48,4 +77,8 @@ public class GameManager : MonoBehaviour
         _isFollowPlayer = true;
     }
 
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(scene);
+    }
 }

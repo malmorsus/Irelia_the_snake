@@ -67,8 +67,8 @@ public class PlayerHealth : MonoBehaviour
             if (health <= 0)
             {
                 hearts[0].sprite = emptyHeart;
-                gameObject.SetActive(false);
-                Destroy(gameObject);
+                
+                Destroy(gameObject, .1f);
             }
             Debug.Log("Im invincible");
             Invoke("StopInvincible", 2f);
@@ -80,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isInvincible = false;
     }
+
 
     /*IEnumerator GetIFrames()
     {
