@@ -635,8 +635,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Press    to   Restart
 --- !u!222 &258765223
@@ -2445,8 +2445,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Y O U    \tD I E D"
 --- !u!222 &1417373163
@@ -4127,15 +4127,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110999332739567136, guid: b1c8e82010262c442bb42bfa455f2bd1, type: 3}
       propertyPath: sounds.Array.data[0].volume
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3110999332739567136, guid: b1c8e82010262c442bb42bfa455f2bd1, type: 3}
       propertyPath: sounds.Array.data[1].volume
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3110999332739567136, guid: b1c8e82010262c442bb42bfa455f2bd1, type: 3}
       propertyPath: sounds.Array.data[2].volume
-      value: 0.5
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110999332739567136, guid: b1c8e82010262c442bb42bfa455f2bd1, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3477262255523337962, guid: b1c8e82010262c442bb42bfa455f2bd1, type: 3}
       propertyPath: m_Name
