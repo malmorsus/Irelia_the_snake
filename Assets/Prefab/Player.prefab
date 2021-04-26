@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 7409678625267693281}
   - component: {fileID: 6825670091666226411}
   - component: {fileID: 8139543024511311174}
+  - component: {fileID: 8347660690524828016}
   - component: {fileID: 5470282927624568686}
   - component: {fileID: 7409678625267693294}
   m_Layer: 3
@@ -286,6 +287,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   isInvincible: 0
+  EventOnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8347660690524828016}
+        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
+        m_MethodName: StartBlink
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8347660690524828016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409678625267693292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c67e9bf5e073314d8ef946b4ac4b663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 850134941328021048}
 --- !u!114 &5470282927624568686
 MonoBehaviour:
   m_ObjectHideFlags: 0

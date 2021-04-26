@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int health;
     public bool isInvincible = false;
+
+    public UnityEvent EventOnTakeDamage;
 
     private SpriteRenderer rend;
     Color c;
@@ -18,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         c = rend.color;
     }
 
-    void Update()
+    /*void Update()
     {
         if (isInvincible)
         {
@@ -30,16 +33,30 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     public void TakeDamage()
     {
-        isInvincible = true;
-        Debug.Log("Im invincible");
-        health--;
+        if (isInvincible == false)
+        {
+            isInvincible = true;
+            health--;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+            Debug.Log("Im invincible");
+            Invoke("StopInvincible", 2f);
+            EventOnTakeDamage.Invoke();
+        }
     }
 
-    IEnumerator GetIFrames()
+    void StopInvincible()
+    {
+        isInvincible = false;
+    }
+
+    /*IEnumerator GetIFrames()
     {
         c.a = 0.5f;
         rend.color = c;
@@ -47,8 +64,8 @@ public class PlayerHealth : MonoBehaviour
         c.a = 1f;
         rend.color = c;
         yield return null;
-        isInvincible = false;
-        Debug.Log("Im frail");
+        //isInvincible = false;
+        //Debug.Log("Im frail");
         
-    }
+    }*/
 }

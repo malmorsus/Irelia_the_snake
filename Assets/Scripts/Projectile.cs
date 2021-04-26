@@ -43,10 +43,10 @@ public class Projectile : MonoBehaviour
         {
             if (other.GetComponentInParent<PlayerHealth>())
             {
-                if (other.GetComponentInParent<PlayerHealth>().isInvincible == false)
-                {
+                //if (other.GetComponentInParent<PlayerHealth>().isInvincible == false)
+                //{
                     other.GetComponentInParent<PlayerHealth>().TakeDamage();
-                }
+                //}
                 DestroyProjectile();
             }
             if (other.GetComponentInParent<SwordBroke>())
