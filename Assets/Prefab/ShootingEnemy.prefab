@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 1268416037341329169}
   - component: {fileID: 4121674701409271186}
   - component: {fileID: 1638919788}
+  - component: {fileID: 5493856435927793403}
   m_Layer: 7
   m_Name: ShootingEnemy
   m_TagString: Untagged
@@ -308,6 +309,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &5493856435927793403
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268416037341329170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86126504f31da7a4298cf4ca58903dd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1500234929816789084
 GameObject:
   m_ObjectHideFlags: 0
