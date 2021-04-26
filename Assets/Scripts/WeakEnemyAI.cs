@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class WeakEnemyAI : MonoBehaviour
 {
+    public Animator Animator;
+
     [Header("Movement Parameters")]
     public float patrollingMoveSpeed;
     private float waitTime;

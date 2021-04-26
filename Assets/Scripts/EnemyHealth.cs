@@ -7,9 +7,22 @@ public class EnemyHealth : MonoBehaviour
     //Enemy NEEDS rigidbody2D and collider2D
 
     public int health;
+    private int currentHealth;
+    public Blood Blood;
+
+    private void Start()
+    {
+        currentHealth = health;
+    }
 
     void Update()
     {
+        if (currentHealth > health)
+        {
+            Blood.BloodBoom();
+            currentHealth = health;
+        }
+        
         if (health <= 0)
         {
             Invoke("DestroyEnemy", 0.1f);

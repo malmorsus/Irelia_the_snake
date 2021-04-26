@@ -52,6 +52,7 @@ public class Projectile : MonoBehaviour
             if (other.GetComponentInParent<SwordBroke>())
             {
                 other.GetComponentInParent<SwordBroke>().BrokeSword();
+                FindObjectOfType<AudioManager>().Play("Shield");
                 DestroyProjectile();
             }
 

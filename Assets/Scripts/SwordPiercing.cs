@@ -43,12 +43,11 @@ public class SwordPiercing : MonoBehaviour
                 {
                     if (FirstDealtDamage)
                     {
-                        FirstDealtDamage = false;
-                        collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
-
                         if (FindObjectOfType<SwordMove>()._isChase == true)
                         {
                             FindObjectOfType<AudioManager>().Play("Attack");
+                            FirstDealtDamage = false;
+                            collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
                             if (SwordStuck == false)
                             {
                                 NewParent = collision.transform;
@@ -58,6 +57,7 @@ public class SwordPiercing : MonoBehaviour
                         else
                         {
                             FindObjectOfType<AudioManager>().Play("AttackThrough");
+                            collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
                         }
                         return;
                     }

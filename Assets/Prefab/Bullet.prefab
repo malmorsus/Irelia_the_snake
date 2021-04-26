@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 347811144429195205}
   - component: {fileID: 6700544273746637021}
   - component: {fileID: 2584941405179379999}
+  - component: {fileID: 5969801245330673361}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 476423473491504190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 8702500930998354194}
   m_Father: {fileID: 0}
@@ -86,6 +87,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 9
+--- !u!114 &5969801245330673361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476423473491504190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7982e47456404f4ea494c364670bd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: {x: 0, y: 0, z: 300}
 --- !u!1 &1103058632035779278
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +172,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -8991182601215641810, guid: f8d39a428e860e7458bdafaf46c44ff4, type: 3}
-  m_Color: {r: 1, g: 0.015094399, b: 0.015094399, a: 1}
+  m_Color: {r: 0.87478805, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

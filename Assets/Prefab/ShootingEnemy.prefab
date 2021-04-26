@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 4121674701409271186}
   - component: {fileID: 1638919788}
   - component: {fileID: 5493856435927793403}
+  - component: {fileID: -99051086292716658}
   m_Layer: 7
   m_Name: ShootingEnemy
   m_TagString: Untagged
@@ -289,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  Blood: {fileID: -99051086292716658}
 --- !u!50 &1638919788
 Rigidbody2D:
   serializedVersion: 4
@@ -329,6 +331,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-99051086292716658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268416037341329170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ffc21ed38474df4b8ef5675704f22b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minNumberOfTrash: 2
+  maxNumberOfTrash: 5
+  flightDistance: 70
+  trash:
+  - {fileID: 8656455099119331360, guid: 3db972c86b0197a4289e9d042043fe0e, type: 3}
+  - {fileID: 2226219107962248226, guid: 9ef0e8d378599bc408afaf6206d7e4d3, type: 3}
+  - {fileID: 4143327479376923623, guid: f868b0c9e3404d84c8130ccc260942f0, type: 3}
 --- !u!1 &1500234929816789084
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +422,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -4744039265938886666, guid: a1d8a9b7a373e264baf3bd49f83982fe, type: 3}
-  m_Color: {r: 0.7169812, g: 0.14610185, b: 0.14610185, a: 1}
+  m_Color: {r: 0.5660378, g: 0.40754604, b: 0.060875725, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
