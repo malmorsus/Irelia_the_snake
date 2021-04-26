@@ -24,8 +24,18 @@ public class SwordPiercing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.GetComponent<RotateShield>())
+        {
+
+            SwordMove.enabled = false;
+            FindObjectOfType<SpawnSword>().WithSword = false;
+            Invoke("SpuwnNewSword", 0f);
+            return;
+        }
+
         if (SwordStartWait == false)
         {
+
             if (collision.GetComponentInParent<PlayerHealth>() == false && collision.GetComponentInParent<SwordPiercing>() == false)
             {
                 if (SwordStuck == false)
@@ -41,6 +51,7 @@ public class SwordPiercing : MonoBehaviour
                 {
                     FirstDealtDamage = false;
                     collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                    return;
                 }
             }
         }
@@ -58,7 +69,7 @@ public class SwordPiercing : MonoBehaviour
         SwordMove.gameObject.transform.SetParent(NewParent, true);
         //SwordMove.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         SwordStuck = true;
-        Invoke("SpuwnNewSword", 2f);
+        Invoke("SpuwnNewSword", 3f);
     }
 
     public void SpuwnNewSword()
