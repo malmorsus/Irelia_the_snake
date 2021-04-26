@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
@@ -14,6 +15,12 @@ public class PlayerHealth : MonoBehaviour
 
     private SpriteRenderer rend;
     Color c;
+
+    [Header("UI")]
+    public int numOfHearts;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
     
     private void Start()
     {
@@ -21,19 +28,34 @@ public class PlayerHealth : MonoBehaviour
         c = rend.color;
     }
 
-    /*void Update()
+    void Update()
     {
-        if (isInvincible)
+        if (health > numOfHearts)
         {
-            StartCoroutine(GetIFrames());
-            
+            health = numOfHearts;
         }
 
-        if (health <= 0)
+        for (int i=0; i < hearts.Length; i++)
         {
-            Destroy(gameObject);
+            if (i < health)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if (i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
         }
-    }*/
+    }
 
     public void TakeDamage()
     {
@@ -44,6 +66,8 @@ public class PlayerHealth : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Damage");
             if (health <= 0)
             {
+                hearts[0].sprite = emptyHeart;
+                gameObject.SetActive(false);
                 Destroy(gameObject);
             }
             Debug.Log("Im invincible");
