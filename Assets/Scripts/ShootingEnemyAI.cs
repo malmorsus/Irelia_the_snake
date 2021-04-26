@@ -24,6 +24,8 @@ public class ShootingEnemyAI : MonoBehaviour
     public GameObject projectile;
     private float timeBtwShots;
     public float startTimeBtwShots;
+    public float startTimeBtwShotsShort;
+    private bool ShortAlready;
     private Vector2 randomVector;
 
     public float agroTimeCD = 1.5f;
@@ -75,14 +77,28 @@ public class ShootingEnemyAI : MonoBehaviour
         }
         else
         {
-            if (timeBtwShots <= 0)
+            if (timeBtwShots <= startTimeBtwShotsShort)
             {
-                Invoke("Shoot", 0.1f);
-                Invoke("Shoot", 0.2f);
-                Invoke("Shoot", 0.3f);
-                timeBtwShots = startTimeBtwShots;
-                _timer = 0f;
-                randomSpot = Random.Range(0, moveSpots.Length);
+                if (ShortAlready == false)
+                {
+
+                    Invoke("Shoot", 0.1f);
+                    Invoke("Shoot", 0.2f);
+                    Invoke("Shoot", 0.3f);
+
+                    ShortAlready = true;
+                }
+                if (timeBtwShots <= 0)
+                {
+                    timeBtwShots = startTimeBtwShots;
+                    _timer = 0f;
+                    randomSpot = Random.Range(0, moveSpots.Length);
+                    ShortAlready = false;
+                }
+                else
+                {
+                    timeBtwShots -= Time.deltaTime;
+                }
             }
             else
             {
