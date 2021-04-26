@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using EZCameraShake;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvincible == false)
         {
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             isInvincible = true;
             health--;
             FindObjectOfType<AudioManager>().Play("Damage");

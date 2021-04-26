@@ -276,6 +276,7 @@ MonoBehaviour:
   StopDistance: 2
   _isChase: 1
   _isFliesBack: 0
+  Sword: {fileID: 5626292935591706065, guid: 68bc23e5deaa3c94abe34810895c0cfd, type: 3}
 --- !u!114 &4421755591110579773
 MonoBehaviour:
   m_ObjectHideFlags: 0

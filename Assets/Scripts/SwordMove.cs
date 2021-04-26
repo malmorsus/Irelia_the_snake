@@ -17,10 +17,15 @@ public class SwordMove : MonoBehaviour
     private Vector3 mousPosition;
     private Vector3 PlayerPosition;
 
+
+    public GameObject Sword;
+    private SwordsTail SwordsTail;
+
     private void Start()
     {
         Camera = FindObjectOfType<Camera>();
         PlayerPosition = FindObjectOfType<PlayerMove>().transform.position;
+        SwordsTail = FindObjectOfType<SwordsTail>();
     }
 
     void Update()
@@ -36,6 +41,10 @@ public class SwordMove : MonoBehaviour
             if (Mathf.Abs(moveTo.x) <= StopDistance && Mathf.Abs(moveTo.y) <= StopDistance)
             {
                 FindObjectOfType<SpawnSword>().WithSword = false;
+
+                GameObject sword = Instantiate(Sword, SwordsTail.transform);
+                SwordsTail.CollectSword(sword);
+
                 Destroy(gameObject);
             }
         }

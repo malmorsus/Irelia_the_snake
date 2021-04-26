@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class SwordPiercing : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class SwordPiercing : MonoBehaviour
                             FindObjectOfType<AudioManager>().Play("Attack");
                             FirstDealtDamage = false;
                             collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
                             if (SwordStuck == false)
                             {
                                 NewParent = collision.transform;
@@ -58,6 +60,7 @@ public class SwordPiercing : MonoBehaviour
                         {
                             FindObjectOfType<AudioManager>().Play("AttackThrough");
                             collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+                            CameraShaker.Instance.ShakeOnce(5f,6f,.1f,1f);
                         }
                         return;
                     }
