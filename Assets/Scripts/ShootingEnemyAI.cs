@@ -83,8 +83,8 @@ public class ShootingEnemyAI : MonoBehaviour
                 {
 
                     Invoke("Shoot", 0.1f);
-                    Invoke("Shoot", 0.2f);
                     Invoke("Shoot", 0.3f);
+                    Invoke("Shoot", 0.5f);
 
                     ShortAlready = true;
                 }
