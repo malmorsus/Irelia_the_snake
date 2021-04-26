@@ -25,10 +25,14 @@ public class SpawnSword : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    WithSword = true;
-                    Invoke("StartWait", SwordStartWaitTime);
-                    Throw();
-                    waitTime = SpawnCD;
+                    if (SwordsTail.Swords.Count - 1 >= 0)
+                    {
+                        WithSword = true;
+                        Invoke("StartWait", SwordStartWaitTime);
+                        Throw();
+                        waitTime = SpawnCD;
+                    }
+
                 }
             }
         }

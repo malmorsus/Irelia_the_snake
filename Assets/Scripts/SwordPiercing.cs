@@ -39,22 +39,33 @@ public class SwordPiercing : MonoBehaviour
 
             if (collision.GetComponentInParent<PlayerHealth>() == false && collision.GetComponentInParent<SwordPiercing>() == false)
             {
-                if (SwordStuck == false)
+                if (collision.GetComponentInParent<EnemyHealth>())
+                {
+                    if (FirstDealtDamage)
+                    {
+                        FirstDealtDamage = false;
+                        collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
+
+                        if (FindObjectOfType<SwordMove>()._isChase == true)
+                        {
+                            FindObjectOfType<AudioManager>().Play("Attack");
+                            if (SwordStuck == false)
+                            {
+                                NewParent = collision.transform;
+                                Invoke("Piercing", 0.05f);
+                            }
+                        }
+                        else
+                        {
+                            FindObjectOfType<AudioManager>().Play("AttackThrough");
+                        }
+                        return;
+                    }
+                }
+                else if (SwordStuck == false)
                 {
                     NewParent = collision.transform;
-                    Invoke("Piercing", 0.05f);
-                    
-                }
-            }
-
-            if (collision.GetComponentInParent<EnemyHealth>())
-            {
-                if (FirstDealtDamage)
-                {
-                    FirstDealtDamage = false;
-                    collision.GetComponentInParent<EnemyHealth>().health -= SwordDamage;
-                    FindObjectOfType<AudioManager>().Play("Attack");
-                    return;
+                    Invoke("Piercing", 0.05f);    
                 }
             }
         }
