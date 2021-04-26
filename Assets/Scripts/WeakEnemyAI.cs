@@ -78,7 +78,6 @@ public class WeakEnemyAI : MonoBehaviour
     {
         //if (Vector2.Distance(transform.position, player.position) > (dashRange - 4f))
         //{
-            Debug.Log("ChasePlayer");
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeedTowardsPlayer * Time.deltaTime);
         //}
     }
@@ -87,7 +86,6 @@ public class WeakEnemyAI : MonoBehaviour
     {
         //if (Vector2.Distance(transform.position, target) > 1f)
         //{
-        Debug.Log("DashOnPlayer");
         //transform.position = Vector2.MoveTowards(transform.position, target, dashSpeedTowardsPlayer * Time.deltaTime);
 
         GetComponent<Rigidbody2D>().velocity = target.normalized * dashSpeedTowardsPlayer;
@@ -104,7 +102,6 @@ public class WeakEnemyAI : MonoBehaviour
     {
         if (isDashing)
         {
-            Debug.Log("STOP_Dash");
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             isDashing = false;
             _timer = 0f;
@@ -114,7 +111,6 @@ public class WeakEnemyAI : MonoBehaviour
 
     void Patroll()
     {
-        Debug.Log("Patroll");
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, patrollingMoveSpeed * Time.deltaTime);
         if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
         {

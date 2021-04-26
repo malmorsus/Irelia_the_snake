@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        cameraFollowPosition = GetCameraFollowPositionFunc();
+        //cameraFollowPosition = GetCameraFollowPositionFunc();
     }
 
     // Update is called once per frame
