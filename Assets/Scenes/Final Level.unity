@@ -602,6 +602,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1477c5f21ec63b84ebd9be19244b5019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &438273107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -31.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_Name
+      value: SwordDrop (17)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
 --- !u!114 &441784461 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3610787357708899628, guid: 67bce9b732e37f341bc74e9c2e6ed089, type: 3}
@@ -784,6 +841,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f40f882e647fd4d84c07ae7913c9fa, type: 3}
+--- !u!1001 &674158783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -40.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_Name
+      value: SwordDrop (18)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
 --- !u!1 &686841420
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,11 +1047,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.00722
+      value: 72.6
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -37.090565
+      value: -37.4
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1104,11 +1218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 79.8
+      value: 80.9
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.8
+      value: 30.6
       objectReference: {fileID: 0}
     - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,6 +1259,63 @@ PrefabInstance:
     - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_Name
       value: SwordDrop (13)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+--- !u!1001 &1038084368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -74.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 32.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_Name
+      value: SwordDrop (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
@@ -1576,6 +1747,63 @@ PrefabInstance:
     - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
       propertyPath: m_Name
       value: SwordDrop (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+--- !u!1001 &1360239317
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_Name
+      value: SwordDrop (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
@@ -2176,6 +2404,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2000592324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_RootOrder
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388484, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159966310673388489, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
+      propertyPath: m_Name
+      value: SwordDrop (16)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e6f6c998949d846b405f26b0246eb3, type: 3}
 --- !u!1001 &2069040484
 PrefabInstance:
   m_ObjectHideFlags: 0
